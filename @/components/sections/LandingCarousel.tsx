@@ -47,12 +47,12 @@ const DOWN_LOAD_BUTTONS = [
 
 export function LandingCarousel() {
   return (
-    <Carousel className="w-full h-[60vh] bg-transparent">
-      <CarouselContent className="bg-transparent">
+    <Carousel className="w-full flex justify-center items-center h-full">
+      <CarouselContent className="bg-transparent h-full m-auto">
         {ONBOARDING_DATA.map((onboardingData, index) => (
-          <CarouselItem key={index} className="">
-            <div className="w-[80vw] flex justify-center items-center">
-              <div className="flex-1 px-5 flex flex-col gap-5">
+          <CarouselItem key={index} className="h-full">
+            <div className="flex justify-center flex-1 items-center">
+              <div className="flex-1 px-5 flex md:items-start items-center justify-center flex-col gap-5">
                 <div className="relative w-[50vw] m-auto justify-center items-center md:hidden flex ">
                   <Iphone15Pro height={200} src={onboardingData.image} />
                 </div>
@@ -63,7 +63,7 @@ export function LandingCarousel() {
                   ></HyperText>
                 </div>
                 <BoxReveal boxColor={'#fff'} duration={0.5}>
-                  <div className="opacity-50 w-[80%] md:text-xs text-[8px]">
+                  <div className="opacity-50 w-[80%] md:m-0 m-auto text-center md:text-left md:text-xs text-[8px]">
                     {onboardingData.description}
                   </div>
                 </BoxReveal>
@@ -86,10 +86,10 @@ export function LandingCarousel() {
                   ))}
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative  md:flex hidden ">
                 <Iphone15Pro
-                  height={700}
-                  width={280}
+                  height={600}
+                  width={250}
                   src={onboardingData.image}
                 />
               </div>
