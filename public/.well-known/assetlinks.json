@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.reactfiber.w5w",
+      "sha256_cert_fingerprints": [
+        "E2:E2:D0:E7:E7:AF:DD:8C:52:CE:D5:25:DB:7C:65:55:0E:DC:22:02:99:50:47:AC:3A:D9:3C:C8:7B:3B:B4:A8",
+        "CA:83:5A:F8:20:56:A3:35:F2:90:F7:8F:F5:A4:C6:52:84:2B:FF:DB:AA:38:FE:A3:58:B9:57:96:B9:75:54:05"
+      ]
+    }
+  }
+]

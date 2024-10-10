@@ -1,9 +1,7 @@
 import type { MetaFunction } from '@remix-run/node';
 import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
-import { LandingCarousel } from '@/components/sections/LandingCarousel';
-import TypingAnimation from '@/components/magicui/typing-animation';
-import HyperText from '@/components/magicui/hyper-text';
+import Footer from '~/components/Footer';
 
 export const meta: MetaFunction = () => {
   return [
@@ -369,15 +367,7 @@ export default function Index() {
           </div>
         </section>
 
-        <div className="flex xs:text-[8px] text-[8px] lg:text-xs opacity-70 justify-center gap-2 items-center">
-          <a className="cursor-pointer" href="/privacy-policy">
-            Privacy & Policy
-          </a>
-          <span>|</span>
-          <a className="cursor-pointer " href="/terms-of-use">
-            Terms of Use
-          </a>
-        </div>
+        <Footer />
       </div>
       <AnimatedGridPattern
         numSquares={30}
