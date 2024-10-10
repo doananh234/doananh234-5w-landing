@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils';
 import { LandingCarousel } from '@/components/sections/LandingCarousel';
 import HyperText from '@/components/magicui/hyper-text';
 import Footer from '~/components/Footer';
+import { ClientOnly } from 'remix-utils/client-only';
+import HandlerDeeplink from '~/components/HandlerDeeplink';
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,7 +25,7 @@ export default function Index() {
         <div className="flex-1 w-full">
           <LandingCarousel />
         </div>
-        <Footer/>
+        <Footer />
       </div>
       <AnimatedGridPattern
         numSquares={30}
@@ -35,6 +37,8 @@ export default function Index() {
           'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12',
         )}
       />
+      <ClientOnly fallback={null}>{() => <HandlerDeeplink />}</ClientOnly>
+      HandlerDeeplink
     </div>
   );
 }
