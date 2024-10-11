@@ -15,7 +15,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="relative p-5 container mx-auto flex w-full items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+    <div className="relative p-5 container mx-auto flex w-full items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
       <div className=" flex flex-col m-auto">
         <div className="flex container  my-6 items-center gap-4">
           <a href="/">

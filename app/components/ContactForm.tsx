@@ -13,8 +13,8 @@ export default function ContactForm() {
     )}&body=${message}`;
   };
   return (
-    <CardContent>
-      <div className=" flex flex-col gap-4">
+    <CardContent className=''>
+      <div className=" flex bg-white flex-col gap-4">
         <Label htmlFor="email">Name</Label>
         <Input required id="name" placeholder="Enter your name" />
         <Label htmlFor="message">Message</Label>

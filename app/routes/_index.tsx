@@ -1,11 +1,12 @@
 import type { MetaFunction } from '@remix-run/node';
-import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
+// import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
 import { LandingCarousel } from '@/components/sections/LandingCarousel';
 import HyperText from '@/components/magicui/hyper-text';
 import Footer from '~/components/Footer';
 import { ClientOnly } from 'remix-utils/client-only';
 import HandlerDeeplink from '~/components/HandlerDeeplink';
+import FlickeringGrid from '@/components/ui/flickering-grid';
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,7 +17,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="relative flex h-[100vh] w-full items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+    <div className="relative flex h-[100vh] w-full items-center justify-center overflow-hidden rounded-lg border md:shadow-xl">
       <div className="h-[90vh] w-[80vw] flex flex-col justify-center items-center m-auto">
         <HyperText
           className="md:text-3xl text-xl lg:text-4xl font-bold text-black dark:text-white"
@@ -27,18 +28,17 @@ export default function Index() {
         </div>
         <Footer />
       </div>
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          '[mask-image:radial-gradient(100vh_circle_at_center,white,transparent)]',
-          'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12',
-        )}
-      />
+      {/* <FlickeringGrid
+        // className="z-0 absolute inset-0 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+        className={'z-0 absolute inset-0 size-full'}
+      /> */}
       <ClientOnly fallback={null}>{() => <HandlerDeeplink />}</ClientOnly>
-      HandlerDeeplink
+      
     </div>
   );
 }

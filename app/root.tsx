@@ -9,6 +9,7 @@ import { cssBundleHref } from '@remix-run/css-bundle';
 import type { LinksFunction } from '@remix-run/node'; // or cloudflare/deno
 import './tailwind.css';
 import './globals.css';
+import Container from './components/Container';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
@@ -16,7 +17,7 @@ export const links: LinksFunction = () => [
 ];
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
+    <html lang="en" className="light" style={{ colorScheme: 'light' }}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,7 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         ></link>
       </head>
       <body>
-        {children}
+        <Container>{children}</Container>
         <ScrollRestoration />
         <Scripts />
       </body>
